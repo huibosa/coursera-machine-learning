@@ -12,9 +12,13 @@ function J = computeCost(X, y, theta)
     % ====================== YOUR CODE HERE ======================
     % Instructions: Compute the cost of a particular choice of theta
     %               You should set J to the cost.
-    predictions = X * theta;
-    sqrErrors = (predictions - y).^2;
-    J = (1 / (2 * m)) * sum(sqrErrors);
+
+    % predictions = X * theta;
+    % sqrErrors = (predictions - y).^2;
+    % J = (1 / (2 * m)) * sum(sqrErrors);
+
+    errors = X * theta - y;
+    J = (1 / (2 * m)) * (errors' * errors);
 
     % =========================================================================
 
